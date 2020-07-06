@@ -5,7 +5,7 @@ $(document).ready(function() {
     $("#currentDay")
     .text("Today is " + currentTime);
     
-    //syntax to sleect an element using Jquery
+    //syntax to sect an element using Jquery
     var btnArray = $(".saveBtn");
 
     //.each is jquery's version of a for loop
@@ -29,4 +29,30 @@ $(document).ready(function() {
         var textvalue = localStorage.getItem("hour-" + i);
         $("#data-" + i).val(textvalue); //how to change value of elements in jquery; data is where we want to put the data
     }
+
+    //loop through time slots to compare hour index to currentTime
+    function compareHour() {
+        //update color code to display the calendar hours to match currentTime
+        var updateHour = moment().hours();
+        $(".timeblock").each(function() {
+            var rowHour = $(this).attr("id");
+            var rowNum = parseInt(rowHour);
+            //set background color if past hour
+            if (rowNum < updateHour) {
+                $(this).addClass(".past");
+            //set background color if present hour
+            } else if (rowNum === updateHour) {
+                $(this)
+                .removeClass(".past")
+                .addClass(".present");
+            //set background color if future hour
+            } else if (rowNum > updateHour) {
+                $(this)
+                .removeClass(".past")
+                .removeClass(".present")
+                .addClass(".future");
+            }
+        });
+    }
+    compareHour();
 });

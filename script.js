@@ -1,5 +1,10 @@
 //if user hit save, send the description to local storage
 $(document).ready(function() {
+    //display current day at top of page
+    var currentTime = moment().format("dddd, MMMM Do YYYY, h a");
+    $("#currentDay")
+    .text("Today is " + currentTime);
+    
     //syntax to sleect an element using Jquery
     var btnArray = $(".saveBtn");
 

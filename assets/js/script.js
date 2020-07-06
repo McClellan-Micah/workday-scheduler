@@ -52,5 +52,11 @@ $(document).ready(function() {
         });
     }
     compareHour();
+
+    //set an interval so that the color-codes update every 30 minutes
+    setInterval(compareHour, (1000 * 60) * 30);
+        if (setInterval = true) {
+            console.log("set interval works");
+        }
 });
 

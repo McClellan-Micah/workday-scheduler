@@ -23,4 +23,4 @@ THEN the saved events persist
 ## Link to deployed application: https://mcclellan-micah.github.io/workday-scheduler/
 
 Screenshot of application:
-![Workday Scheduler](/images/workday-scheduler-screenshot.png)
+![Workday Scheduler](workday-scheduler-screenshot.png)

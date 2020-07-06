@@ -20,8 +20,7 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 
-# Link to deployed application:
-https://mcclellan-micah.github.io/workday-scheduler/
+# Link to deployed application: https://mcclellan-micah.github.io/workday-scheduler/
 
 Screenshot of application:
-![Workday Scheduler](./images/workday-scheduler-screenshot.png)
+![Workday Scheduler](/images/workday-scheduler-screenshot.png)

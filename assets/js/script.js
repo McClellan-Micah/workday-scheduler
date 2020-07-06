@@ -1,10 +1,11 @@
 //if user hit save, send the description to local storage
 $(document).ready(function() {
+
     //display current day at top of page
     var currentTime = moment().format("dddd, MMMM Do YYYY, h a");
     $("#currentDay")
     .text("Today is " + currentTime);
-    
+
     //syntax to sect an element using Jquery
     var btnArray = $(".saveBtn");
 
@@ -34,26 +35,22 @@ $(document).ready(function() {
     function compareHour() {
         //update color code to display the calendar hours to match currentTime
         var updateHour = moment().hours();
-        $(".timeblock").each(function() {
-            var rowHour = $(this).attr("id");
-            var rowNum = parseInt(rowHour);
+        $(".time-block > textarea").each(function() {
+            var hour = parseInt($(this).attr("id").split("-")[1]);
             //set background color if past hour
-            if (rowNum < updateHour) {
-                $(this).addClass(".past");
+            if (hour < updateHour) {
+                $(this).addClass("past");
             //set background color if present hour
-            } else if (rowNum === updateHour) {
+            } else if (hour === updateHour) {
                 $(this)
-                .removeClass(".past")
-                .addClass(".present");
+                .addClass("present");
             //set background color if future hour
-            } else if (rowNum > updateHour) {
+            } else if (hour > updateHour) {
                 $(this)
-                .removeClass(".past")
-                .removeClass(".present")
-                .addClass(".future");
+                .addClass("future");
             }
         });
     }
     compareHour();
-    console.log("compareHour", compareHour);
 });
+
